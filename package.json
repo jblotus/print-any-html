@@ -1,18 +1,27 @@
 {
-	"name":        "print-any-html",
+	"name": "print-any-html",
 	"description": "Let the browser print any HTML string.",
-	"version":     "0.1.0",
-	"main":        "index.js",
-	"files":       ["index.js"],
-	"keywords":    ["print", "html", "iframe", "browser"],
-	"author":      "Jannis R <mail@jannisr.de>",
-	"homepage":    "http://derhuerst.github.io/print-any-html/",
-	"repository":  "derhuerst/print-any-html",
-	"bugs":        "https://github.com/derhuerst/print-any-html/issues",
-	"license":     "ISC",
-	"engines":     {"node": ">=6"},
+	"version": "0.1.0",
+	"main": "index.js",
+	"files": [
+		"index.js"
+	],
+	"keywords": [
+		"print",
+		"html",
+		"iframe",
+		"browser"
+	],
+	"author": "Jannis R <mail@jannisr.de>",
+	"homepage": "http://derhuerst.github.io/print-any-html/",
+	"repository": "derhuerst/print-any-html",
+	"bugs": "https://github.com/derhuerst/print-any-html/issues",
+	"license": "ISC",
+	"engines": {
+		"node": ">=6"
+	},
 	"dependencies": {
-		"window-on-print": "^0.1.0"
+		"window-on-print": "^0.2.1"
 	},
 	"devDependencies": {
 		"browserify": "^13.1.1",

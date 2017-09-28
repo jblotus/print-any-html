@@ -7,6 +7,7 @@
 [![dependency status](https://img.shields.io/david/derhuerst/print-any-html.svg)](https://david-dm.org/derhuerst/print-any-html)
 [![dev dependency status](https://img.shields.io/david/dev/derhuerst/print-any-html.svg)](https://david-dm.org/derhuerst/print-any-html#info=devDependencies)
 ![ISC-licensed](https://img.shields.io/github/license/derhuerst/print-any-html.svg)
+[![chat on gitter](https://badges.gitter.im/derhuerst.svg)](https://gitter.im/derhuerst)
 
 
 ## Installing

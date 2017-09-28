@@ -33,29 +33,34 @@ module.exports = print;
 },{"window-on-print":2}],2:[function(require,module,exports){
 'use strict';
 
-var onPrint = function (type, match) {
+var onPrint = function onPrint(type, match) {
 	return function (window, cb) {
 		var called = false,
 		    query = void 0,
 		    queryFn = void 0;
 
-		var cleanup = function () {
+		var unsubscribe = function unsubscribe() {
 			if (queryFn) query.removeListener(queryFn);
-			window.removeEventListener(type + 'print', onPrint, false);
-			if (!called) {
-				called = true;
-				cb();
-			}
+			window.removeEventListener(type + 'print', print, false);
+		};
+
+		var print = function print() {
+			if (called) return;
+			called = true;
+			cb();
 		};
 
 		if (window.matchMedia) {
-			queryFn = function (query) {
-				if (query.matches === match) cleanup();
+			queryFn = function queryFn(query) {
+				if (query.matches === match) print();
 			};
 			query = window.matchMedia('print');
 			query.addListener(queryFn);
+		} else {
+			window.addEventListener(type + 'print', print, false);
 		}
-		window.addEventListener(type + 'print', onPrint, false);
+
+		return unsubscribe;
 	};
 };
 
