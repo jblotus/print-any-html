@@ -29,8 +29,8 @@
 		"uglify-es": "^3.1.2"
 	},
 	"scripts": {
-		"bundle": "browserify --standalone print -g es2020 index.js > build/print-any-html.js",
-		"minify": "cat build/print-any-html.js | uglifyjs -mc > build/print-any-html.min.js",
+		"bundle": "browserify --standalone print -g es2020 index.js > docs/print-any-html.js",
+		"minify": "cat docs/print-any-html.js | uglifyjs -mc > docs/print-any-html.min.js",
 		"build": "npm run bundle && npm run minify"
 	}
 }
