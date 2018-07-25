@@ -21,7 +21,11 @@ const print = (html, cb, delay) => {
 		setTimeout(() => {
 			onPrint.after(iframe.contentWindow, teardown)
 			iframe.contentWindow.focus()
-			iframe.contentWindow.print()
+			try {
+            	iframe.contentWindow.document.execCommand('print', false, null)
+        		} catch(e) {
+            	iframe.contentWindow.print()
+        	}
 		}, delay || 50)
 	}, 0)
 }
